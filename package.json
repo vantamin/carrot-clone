@@ -1,0 +1,15 @@
+{
+  "name": "carrot-clone",
+  "version": "1.0.0",
+  "description": "당근마켓을 만들며 배워보는 Firebase",
+  "main": "index.js",
+  "devDependencies": {
+    "prettier": "2.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
