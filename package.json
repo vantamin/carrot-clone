@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "당근마켓을 만들며 배워보는 Firebase",
   "main": "index.js",
+  "dependencies": {
+    "firebase": "^9.8.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
