@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBsgFCnAACsSyxVw5V1NVlOd0SVMNYn1V8',
@@ -9,5 +10,11 @@ const firebaseConfig = {
   appId: '1:896837902817:web:0d8d872074d683f1df72a0',
 };
 
-// eslint-disable-next-line no-unused-vars
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+getDocs(collection(db, 'products')).then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    console.log(doc.data());
+  });
+});
