@@ -1,20 +1,19 @@
-import { initializeApp } from 'firebase/app';
-import { collection, getDocs, getFirestore } from 'firebase/firestore';
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyBsgFCnAACsSyxVw5V1NVlOd0SVMNYn1V8',
-  authDomain: 'carrot-clone-8268a.firebaseapp.com',
-  projectId: 'carrot-clone-8268a',
-  storageBucket: 'carrot-clone-8268a.appspot.com',
-  messagingSenderId: '896837902817',
-  appId: '1:896837902817:web:0d8d872074d683f1df72a0',
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from './firebase';
+import './main.css';
 
 getDocs(collection(db, 'products')).then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     console.log(doc.data());
+    const tamplate = `<div class="product">
+      <div class="thumbnail" style="background-image: url('https://via.placeholder.com/350')"></div>
+      <div class="flex-grow-1 p-4">
+        <h5 class="title">${doc.data().title}</h5>
+        <p class="date">2030년 1월 8일</p>
+        <p class="price">20000원</p>
+        <p class="float-end">?0</p>
+      </div>
+    </div>`;
+    document.querySelector('.container').innerHTML += tamplate;
   });
 });
