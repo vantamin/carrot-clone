@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     index: path.resolve(__dirname, 'src', 'index.js'),
     upload: path.resolve(__dirname, 'src', 'upload.js'),
+    login: path.resolve(__dirname, 'src', 'login.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -20,6 +21,11 @@ module.exports = {
       filename: 'upload.html',
       template: path.resolve(__dirname, 'src', 'upload.html'),
       chunks: ['upload'],
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'login.html',
+      template: path.resolve(__dirname, 'src', 'login.html'),
+      chunks: ['login'],
     }),
   ],
   module: {
